@@ -176,6 +176,76 @@
       margin-bottom: 1rem;
     }
 
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-top: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.85rem;
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px var(--surface);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.125rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-item .period {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .timeline-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-item ul {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .timeline-item li {
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item strong {
+      color: var(--text);
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -265,6 +335,18 @@
       .hero {
         padding: 2.5rem 0;
       }
+
+      .timeline {
+        padding-left: 1.5rem;
+      }
+
+      .timeline::before {
+        left: 0.35rem;
+      }
+
+      .timeline-item::before {
+        left: -1.45rem;
+      }
     }
   </style>
 </head>
@@ -299,7 +381,7 @@
         sanidade e exploratórios até a criação e liderança de projetos de automação end-to-end e de
         performance. Tenho sólida vivência com Ruby, Capybara, Cucumber (BDD), Page Objects
         (SitePrism/DSL), Selenium, Grafana K6, Postman e Jira Atlassian (Kanban).
-        </p>
+      </p>
       <p>
         Sou movido pela curiosidade técnica e pelo compromisso de entregar software com qualidade real e mensurável.
       </p>
@@ -308,44 +390,51 @@
     <section id="trajetoria" class="about">
       <h2>💼 Trajetória Profissional</h2>
       <p>
-        Com 9 anos de experiência em garantia da qualidade de software (sendo 5 deles dedicados à automação de testes),
-        acredito que minha trajetória pode agregar valor à equipe.
+        9 anos em garantia da qualidade de software, sendo 5 dedicados à automação de testes.
+        Da execução manual à liderança de suítes automatizadas, minha trajetória é pautada em reduzir tempo de feedback,
+        prevenir defeitos e entregar valor real para o usuário final.
       </p>
-      <p>
-        Na CustomerX, onde atuei por quase cinco anos, liderei o projeto de automação end-to-end em Ruby com Capybara, 
-        Cucumber e Selenium, além de ter implementado do zero a suíte de testes de performance com Grafana K6.
-        Não foi só questão de montar scripts — precisei entender onde o sistema quebrava com mais frequência, 
-        priorizar cenários críticos e fazer com que a automação realmente reduzisse o tempo de feedback da equipe. 
-        Recentemente, inclusive, adicionei a funcionalidade de self-healing locators com IA, 
-        o que diminuiu bastante a manutenção dos testes quando a interface mudava.
-      </p>
-      <p>
-        Paralelo à automação, segui executando testes manuais de caixa-preta (funcional, regressão, sanidade, 
-        exploratório e de aceitação) e testes de API validando métodos HTTP, status, body e headers no Postman. 
-        Acompanhei tudo isso no Jira Atlassian, em um fluxo Kanban que adaptamos ao longo do tempo, 
-        criei e mantive os cenários de teste, reportei defeitos, acompanhei o ciclo de vida deles e 
-        ajudei a priorizar o que realmente precisava ser corrigido antes da entrega, participei das dailies e, 
-        quando necessário, questionei requisitos ainda no refinamento para evitar retrabalho depois.
-      </p>
-      <p>
-        Antes disso, na Junsoft Sistemas, passei quase três anos testando um sistema ERP na prática: caixa-preta, regressão,
-        integração com banco Firebird. Foi lá que aprendi que testar bem não é só achar bug — é garantir que o usuário final
-        não tenha dor de cabeça com rotinas fiscais e contábeis. Essa vivência me deu uma noção prática de negócio.
-      </p>
-      <p>
-        Hoje, estou cursando Engenharia de Software na UNIPAR (previsão de conclusão em 2028), o que tem me ajudado a
-        enxergar a qualidade com uma lente mais técnica e estratégica.
-      </p>
-      <p>
-        Domino ferramentas como Postman, Jira, Allure Report e tenho familiaridade com Playwright e Cypress, mas meu ponto
-        forte mesmo é conseguir olhar para um processo de entrega e identificar onde a qualidade está falhando — seja com
-        teste manual ou com automação.
-      </p>
-      <p>
-        Gosto de trabalhar em times ágeis, de questionar requisitos antes de codar e de documentar o que aprendi para quem
-        vier depois. Valorizo times que entregam com qualidade real e se preocupam com quem usa o produto — e me sinto
-        motivado em contribuir com esse tipo de cultura.
-      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>CustomerX</h3>
+          <span class="period">Analista de Testes | 2020 — 2025</span>
+          <p>
+            Liderei a automação end-to-end em Ruby, Capybara, Cucumber e Selenium, além de ter implementado do zero
+            a suíte de testes de performance com Grafana K6.
+          </p>
+          <ul>
+            <li>Priorização de cenários críticos e redução do tempo de feedback da equipe.</li>
+            <li>Implementação de <strong>Self Healing Locators com IA</strong>, diminuindo a manutenção dos testes em refactoring de UI.</li>
+            <li>Execução de testes manuais de caixa-preta, regressão, sanidade, exploratório e de aceitação.</li>
+            <li>Testes de API validando métodos HTTP, status, body e headers no Postman.</li>
+            <li>Gestão de cenários, defeitos e priorizações no Jira Atlassian (Kanban).</li>
+            <li>Participação ativa em dailies e refinamentos para evitar retrabalho.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Junsoft Sistemas</h3>
+          <span class="period">Analista de Testes | 2017 — 2020</span>
+          <p>
+            Testes práticos em sistema ERP fiscal e contábil, com forte proximidade do negócio e do usuário final.
+          </p>
+          <ul>
+            <li>Testes funcionais, regressão e integração com banco Firebird.</li>
+            <li>Visão de negócio para garantir rotinas fiscais e contábeis sem regressões críticas.</li>
+            <li>Consciência de que testar bem vai além de encontrar bugs: é proteger a experiência do usuário.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h3>UNIPAR — Engenharia de Software</h3>
+          <span class="period">Graduação em andamento | Previsão 2028</span>
+          <p>
+            Formação que tem ampliado minha visão técnica e estratégica sobre qualidade de software,
+            arquitetura e processos de entrega.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="projetos">
@@ -424,7 +513,6 @@
         <span class="skill">Postman</span>
         <span class="skill">Jira Atlassian (Kanban/Scrum)</span>
         <span class="skill">Desenvolvimento ágil</span>
-        
       </div>
     </section>
 
